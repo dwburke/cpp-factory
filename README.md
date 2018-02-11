@@ -29,7 +29,7 @@ Example 2:
 class ObjectTypeFactory : public Factory<object_type_generic, int, Object *> {
    public:
       ObjectTypeFactory() {
-         registerType<object_type_light>(OBJECT_WEAPON);
+         registerType<object_type_weapon>(OBJECT_WEAPON);
       };
 };
 
