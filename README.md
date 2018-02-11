@@ -1,8 +1,12 @@
 
-A C++ Factory
+# A C++ Factory
+
+This is a C++ factory.  It requires manual registration of subclasses, but it's a simple thing to 
+call `registerType<>()` to add a new class.  The key can be an `int` or `string` (or probably any
+other type of variable you require).
 
 
-Example 1:
+## Example 1:
 
 ```
 #include "Factory.h"
@@ -21,7 +25,7 @@ auto sample_thing = sample_factory.create("child1");
 
 
 
-Example 2:
+## Example 2:
 
 ```
 #include "Factory.h"
