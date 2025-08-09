@@ -26,8 +26,9 @@ class Factory {
       }
    }
 
-      throw std::range_error(
-          fmt::format("key [{}] is not registered", key));
+   bool contains(KEYT key)
+   {
+      return _createFuncs.contains(key);
    }
 
    private:
