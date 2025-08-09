@@ -17,11 +17,14 @@ class Factory {
 
    std::shared_ptr<T> create(KEYT key, Args... args)
    {
-      auto it = _createFuncs.find(key);
-      if (it != _createFuncs.end()) {
-         auto &pair = *it;
-         return pair.second(args...);
+      try {
+         auto f = _createFuncs.at(key);
+         return f(args...);
+      } catch (const std::out_of_range &) {
+         throw std::range_error(
+             fmt::format("key [{}] is not registered", key));
       }
+   }
 
       throw std::range_error(
           fmt::format("key [{}] is not registered", key));
