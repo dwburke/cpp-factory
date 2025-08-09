@@ -35,7 +35,7 @@ class Factory {
    template <typename TDerived>
    static std::shared_ptr<T> createFunc(Args... args)
    {
-      return std::shared_ptr<TDerived>(new TDerived(args...));
+      return std::make_shared<TDerived>(args...);
    }
 
    typedef std::shared_ptr<T> (*PCreateFunc)(Args...);
